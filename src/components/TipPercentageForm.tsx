@@ -32,7 +32,7 @@ export default function TipPercentageForm({
       <h3 className="font-black text-2xl">Propina:</h3>
       <form>
         {tipOptions.map((tipOption) => (
-          <div key={tipOption.id} className="flex gap-2">
+          <div key={tipOption.id} className="flex gap-2 hover:cursor-pointer">
             <label htmlFor={tipOption.id}>{tipOption.label}</label>
             <input
               id={tipOption.id}
