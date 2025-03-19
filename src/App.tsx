@@ -1,5 +1,6 @@
 import MenuItem from "./components/MenuItem";
 import OrderContents from "./components/ORderContents";
+import OrderTotals from "./components/OrderTotals";
 import { menuItems } from "./data/db";
 import useOrder from "./hooks/useOrder";
 
@@ -22,20 +23,15 @@ function App() {
           </div>
         </div>
         <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
-            {order.length ? (
-              <>
-                  <OrderContents
-                    order={order}
-                    removeItem={removeItem}
-                  />
-                
-              </>
-            ) : (
-              <p className="text-center">La orden esta vacia</p>
-            )}
- 
-
-          </div>
+          {order.length ? (
+            <>
+              <OrderContents order={order} removeItem={removeItem} />
+              <OrderTotals order={order} tip={tip} placeOrder={placeOrder} />
+            </>
+          ) : (
+            <p className="text-center">La orden esta vacia</p>
+          )}
+        </div>
       </main>
     </>
   );
